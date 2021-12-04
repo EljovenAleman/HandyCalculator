@@ -26,6 +26,14 @@ public class ResetButton : MonoBehaviour
         {
             calculationText = GameObject.Find("CalculationRight").GetComponentInChildren<TextMeshProUGUI>();
         }
+        else if (SlotManager.slot == 3)
+        {
+            calculationText = GameObject.Find("CalculationBottomLeft").GetComponentInChildren<TextMeshProUGUI>();
+        }
+        else if (SlotManager.slot == 4)
+        {
+            calculationText = GameObject.Find("CalculationBottomRight").GetComponentInChildren<TextMeshProUGUI>();
+        }
         calculationText.text = "0";
     }
 }

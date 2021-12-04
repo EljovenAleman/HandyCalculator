@@ -29,6 +29,26 @@ public class NumberButton : MonoBehaviour
             Debug.Log("added to slot 2");
             calculationText = GameObject.Find("CalculationRight").GetComponentInChildren<TextMeshProUGUI>();
         }
-        calculationText.text = calculationText.text + button.gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
+        else if (SlotManager.slot == 3)
+        {
+            Debug.Log("added to slot 3");
+            calculationText = GameObject.Find("CalculationBottomLeft").GetComponentInChildren<TextMeshProUGUI>();
+        }
+        else if (SlotManager.slot == 4)
+        {
+            Debug.Log("added to slot 4");
+            calculationText = GameObject.Find("CalculationBottomRight").GetComponentInChildren<TextMeshProUGUI>();
+        }
+
+        if(calculationText.text == "0")
+        {
+            calculationText.text = button.gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
+        }
+        else
+        {
+            calculationText.text = calculationText.text + button.gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
+        }
     }
-}
+        
+    }
+
