@@ -15,4 +15,9 @@ public static class SceneRedirector
     {
         SceneManager.LoadScene(1);
     }
+
+    public static void GoToRoots()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

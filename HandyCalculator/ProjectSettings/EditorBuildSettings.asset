@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BasicCalculator.unity
     guid: fdb736abc82879d4aaacc1f54e39dae1
+  - enabled: 1
+    path: Assets/Scenes/Roots.unity
+    guid: 15025a3f34dcddd4cbda47f67cf11985
   m_configObjects: {}
