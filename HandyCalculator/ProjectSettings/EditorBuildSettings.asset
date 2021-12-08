@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RuleOfThree.unity
     guid: 48b0d1fc96828344d943b2a20973445e
+  - enabled: 1
+    path: Assets/Scenes/Trigonometry.unity
+    guid: 852b6a472ea3c454dae19779444ecd89
   m_configObjects: {}

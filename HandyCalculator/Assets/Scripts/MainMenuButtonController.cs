@@ -9,6 +9,8 @@ public class MainMenuButtonController : MonoBehaviour
     [SerializeField] Button rootsButton;
     [SerializeField] Button exponentiationButton;
     [SerializeField] Button ruleOfThreeButton;
+    [SerializeField] Button trigonometry;
+
 
 
     void Start()
@@ -17,5 +19,6 @@ public class MainMenuButtonController : MonoBehaviour
         rootsButton.onClick.AddListener(SceneRedirector.GoToRoots);
         exponentiationButton.onClick.AddListener(SceneRedirector.GoToExponentiation);
         ruleOfThreeButton.onClick.AddListener(SceneRedirector.GoToRuleOfThree);
+        trigonometry.onClick.AddListener(SceneRedirector.GoToTrigonometry);
     }    
 }

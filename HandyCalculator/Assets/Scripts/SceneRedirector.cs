@@ -29,4 +29,9 @@ public static class SceneRedirector
     {
         SceneManager.LoadScene(4);
     }
+
+    public static void GoToTrigonometry()
+    {
+        SceneManager.LoadScene(5);
+    }
 }
