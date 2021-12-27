@@ -1,41 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NumberButton : MonoBehaviour
+public class PasteButton : MonoBehaviour
 {
     Button button;
     TextMeshProUGUI calculationText;
-    
+
     void Start()
     {
-        if (FindObjectOfType<TrigonometryCalculator>() != null)
-        {
-            calculationText = GameObject.Find("CalculationA").GetComponentInChildren<TextMeshProUGUI>();
-        }
-        else
-        {
-            calculationText = GameObject.Find("CalculationLeft").GetComponentInChildren<TextMeshProUGUI>();
-        }
-
         button = GetComponent<Button>();
-        button.onClick.AddListener(AddNumberToCalculation);
-    }        
+        button.onClick.AddListener(PasteCopiedResult);
+    }
 
-    void AddNumberToCalculation()
+   void PasteCopiedResult()
     {
         SetCalculationText();
 
-        if (calculationText.text == "0")
-        {
-            calculationText.text = button.gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
-        }
-        else
-        {
-            calculationText.text = calculationText.text + button.gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
-        }
+        calculationText.text = PlayerPrefs.GetString("copiedResult");
+
     }
 
     private void SetCalculationText()
@@ -93,4 +79,3 @@ public class NumberButton : MonoBehaviour
         }
     }
 }
-

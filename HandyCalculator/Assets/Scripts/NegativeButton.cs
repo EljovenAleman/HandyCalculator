@@ -1,41 +1,34 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NumberButton : MonoBehaviour
+public class NegativeButton : MonoBehaviour
 {
-    Button button;
     TextMeshProUGUI calculationText;
-    
+    Button button;
     void Start()
     {
-        if (FindObjectOfType<TrigonometryCalculator>() != null)
-        {
-            calculationText = GameObject.Find("CalculationA").GetComponentInChildren<TextMeshProUGUI>();
-        }
-        else
-        {
-            calculationText = GameObject.Find("CalculationLeft").GetComponentInChildren<TextMeshProUGUI>();
-        }
-
         button = GetComponent<Button>();
-        button.onClick.AddListener(AddNumberToCalculation);
-    }        
 
-    void AddNumberToCalculation()
+        button.onClick.AddListener(SetNumberToNegative);
+    }
+
+    void SetNumberToNegative()
     {
         SetCalculationText();
 
-        if (calculationText.text == "0")
+        if(calculationText.text[0] != '-')
         {
-            calculationText.text = button.gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
+            calculationText.text = "-" + calculationText.text;
         }
-        else
+        else if(calculationText.text[0] == '-')
         {
-            calculationText.text = calculationText.text + button.gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
+            calculationText.text = calculationText.text.Remove(0,1);
         }
+        
     }
 
     private void SetCalculationText()
@@ -93,4 +86,3 @@ public class NumberButton : MonoBehaviour
         }
     }
 }
-
